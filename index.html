@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fleetwood Mac — Autoplay</title>
+</head>
+<body style="margin: 0; background: #111; color: #eee; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif;">
+  <div>
+    <h2>Now Playing</h2>
+    <p>Fleetwood Mac — Rumours (How Divorce Fueled It)</p>
+    <audio id="player" controls autoplay>
+      <source src="https://raw.githubusercontent.com/danmiley/main/Fleetwood_Mac_Rumours_How_Divorce_Fueled_It.m4a" type="audio/mp4">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <script>
+    // Attempt unmute if autoplay is blocked
+    const player = document.getElementById('player');
+    player.muted = false;
+    player.play().catch(() => {
+      console.log("Autoplay may require user interaction.");
+    });
+  </script>
+</body>
+</html>
