@@ -2,24 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fleetwood Mac — Autoplay</title>
+  <title>Fleetwood Mac – Rumours: How Divorce Fueled It</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: #eee;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .wrapper {
+      text-align: center;
+      padding: 24px;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+    audio {
+      width: 100%;
+      max-width: 480px;
+    }
+  </style>
 </head>
-<body style="margin: 0; background: #111; color: #eee; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif;">
-  <div>
-    <h2>Now Playing</h2>
-    <p>Fleetwood Mac — Rumours (How Divorce Fueled It)</p>
+<body>
+  <div class="wrapper">
+    <h1>Now Playing</h1>
+    <p>Fleetwood Mac – Rumours: How Divorce Fueled It</p>
+
     <audio id="player" controls autoplay>
-      <source src="https://raw.githubusercontent.com/danmiley/main/Fleetwood_Mac_Rumours_How_Divorce_Fueled_It.m4a" type="audio/mp4">
+      <source src="https://raw.githubusercontent.com/danmiley/content/main/Fleetwood_Mac_Rumours_How_Divorce_Fueled_It.m4a" type="audio/mp4">
       Your browser does not support the audio element.
     </audio>
   </div>
 
   <script>
-    // Attempt unmute if autoplay is blocked
+    // Best-effort autoplay; browsers may still require user interaction
     const player = document.getElementById('player');
     player.muted = false;
     player.play().catch(() => {
-      console.log("Autoplay may require user interaction.");
+      console.log('Autoplay with sound may be blocked; user interaction required.');
     });
   </script>
 </body>
